@@ -13,10 +13,19 @@ fn main() {
                 let mut celsius = String::new();
                 io::stdin().read_line(&mut celsius).expect("Failed to read line");
 
-                let fahrenheit: f64 = (celsius.trim().parse().unwrap() * 1.8) + 32;
-                println!("{}", fahrenheit);
+                let celsius: f64 = celsius.trim().parse().unwrap();
+                let fahrenheit: f64 = (celsius * 1.8) + 32.0;
+                println!("{}F", fahrenheit);
             },
-            "n" => println!("no"),
+            "n" => {
+                println!("Please input fahrenheit");
+                let mut fahrenheit = String::new();
+                io::stdin().read_line(&mut fahrenheit).expect("Failed to read line");
+
+                let fahrenheit: f64 = fahrenheit.trim().parse().unwrap();
+                let celsius: f64 = (fahrenheit - 32.0) / 1.8;
+                println!("{}C", celsius);
+            },
             _ => {
                 println!("Please input y or n");
                 continue;
