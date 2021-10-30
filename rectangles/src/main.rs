@@ -9,12 +9,12 @@ impl Rectangle {
         self.width * self.height
     }
 
-    // fn square(size: u32) -> Rectangle {
-    //     Rectangle {
-    //         width: size,
-    //         height: size,
-    //     }
-    // }
+    fn square(size: u32) -> Rectangle {
+        Rectangle {
+            width: size,
+            height: size,
+        }
+    }
 
     fn can_hold(&self, other: &Rectangle) -> bool {
         self.width > other.width && self.height > other.height
@@ -34,7 +34,7 @@ fn main() {
         width: 60,
         height: 45,
     };
-    // let square = Rectangle::square(10);
+    let square = Rectangle::square(10);
 
     println!("Rectangle is {:?}", rect);
     println!(
@@ -43,5 +43,5 @@ fn main() {
     );
     println!("Can react hold rect2? {}", rect.can_hold(&rect2));
     println!("Can react hold rect3? {}", rect.can_hold(&rect3));
-    // println!("The area of the square rectangle is {}", square.area());
+    println!("The area of the square rectangle is {}", square.area());
 }
