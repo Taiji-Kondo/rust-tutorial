@@ -1,4 +1,9 @@
 fn main() {
+    // for_loop();
+    while_loop();
+}
+
+fn for_loop() {
     let mut count = 0;
 
     'count_up: loop {
@@ -18,4 +23,14 @@ fn main() {
         count += 1;
     }
     println!("end count: {}", count);
+}
+
+fn while_loop() {
+    let mut number = 3;
+
+    while number != 0 {
+        println!("{}!", number);
+        number -= 1;
+    }
+    println!("LIFTOFF!!!");
 }
