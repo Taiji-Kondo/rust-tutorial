@@ -18,4 +18,7 @@ fn main() {
     } else {
         println!("x is less than 5")
     }
+
+    let y = if x > 5 { "greater" } else { "less" };
+    println!("x is {} than 5", y);
 }
