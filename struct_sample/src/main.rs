@@ -1,3 +1,4 @@
+#[derive(Debug)]
 // Normal
 // fn main() {
 //     let width: u32 = 5;
@@ -31,6 +32,7 @@ struct Rectangle {
 
 fn main() {
     let rect: Rectangle = Rectangle { width: 5, height: 6 };
+    println!("{:?}", rect);
 
     let area = area(&rect);
     println!("{}", area);
