@@ -30,14 +30,27 @@ struct Rectangle {
     height: u32,
 }
 
-fn main() {
-    let rect: Rectangle = Rectangle { width: 5, height: 6 };
-    println!("{:?}", rect);
+impl Rectangle {
+    fn area(&self) -> u32 {
+        self.width * self.height
+    }
 
-    let area = area(&rect);
-    println!("{}", area);
+    fn can_hold(&self, other: &Rectangle) -> bool {
+        other.width < self.width && other.height < self.height
+    }
 }
 
-fn area(rectangle: &Rectangle) -> u32 {
-    rectangle.width * rectangle.height
+fn main() {
+    let rect1: Rectangle = Rectangle { width: 50, height: 60 };
+    let rect2: Rectangle = Rectangle { width: 40, height: 30 };
+    let rect3: Rectangle = Rectangle { width: 60, height: 60 };
+    println!("{:?}", rect1);
+    println!("{:?}", rect2);
+    println!("{:?}", rect3);
+
+    // let area = area(&rect);
+    let area = rect1.area();
+    println!("rect1 area: {}", area);
+    println!("rect1 can hold rect2: {:?}", rect1.can_hold(&rect2));
+    println!("rect1 can hold rect3: {:?}", rect1.can_hold(&rect3));
 }
